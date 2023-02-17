@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         "text-blue": "#20252E",
         "primary-blue": "#525E75",
-        "light-blue": "#E3EDFF",
+        "light-blue": "#b1bac8",
       },
       fontFamily: {
         manrope: ["Manrope", "sans-serif"],

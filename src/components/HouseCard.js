@@ -5,7 +5,7 @@ import { BiBuildingHouse } from "react-icons/bi";
 
 export default function HouseCard(props) {
   return (
-    <div className="flex flex-col w-1/3 p-4">
+    <div className="flex flex-col w-1/3 p-4 shadow-lg">
       <div>
         <img className=" rounded-t-lg min-h-[16rem]" src={props.image}></img>
         {/* <span className=" bg-purple-500">{props.isPopular && "Popular"}</span> */}

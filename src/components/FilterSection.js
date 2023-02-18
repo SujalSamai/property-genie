@@ -3,12 +3,13 @@ import { FaChevronDown } from "react-icons/fa";
 import Selector from "./Selector";
 
 export default function FilterSection() {
+  const [searchInput, setSearchInput] = useState("");
   const [inputDate, setInputDate] = useState("");
   const prices = [
-    { value: "1", label: "$500-$2,500" },
-    { value: "2", label: "$800-$3,000" },
-    { value: "3", label: "$1,000-$4,000" },
-    { value: "4", label: "$1,500-$5,000" },
+    { value: "1", label: "5,000Rs. - 20,000Rs." },
+    { value: "2", label: "22,000Rs. - 40,000Rs." },
+    { value: "3", label: "45,000Rs. - 60,000Rs." },
+    { value: "4", label: "61,000 Rs. +" },
   ];
   const property = [
     { value: "1", label: "House" },
@@ -29,6 +30,8 @@ export default function FilterSection() {
             <input
               type="search"
               placeholder="Search with Search Bar"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
               className="border-2 w-full border-light-blue rounded-md py-2 pl-2 pr-4 text-sm font-semibold"
             ></input>
             <FaChevronDown className="relative right-6 bg-light-blue bg-opacity-40 rounded-full p-1" />
@@ -59,13 +62,9 @@ export default function FilterSection() {
             </div>
           </div>
           {hr}
-          <Selector heading="Price" default="$500-$2,500" options={prices} />
+          <Selector heading="Price" default="All" options={prices} />
           {hr}
-          <Selector
-            heading="Property Type"
-            default="House"
-            options={property}
-          />
+          <Selector heading="Property Type" default="All" options={property} />
           {hr}
           <button
             type="submit"

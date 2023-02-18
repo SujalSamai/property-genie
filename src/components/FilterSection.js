@@ -1,17 +1,15 @@
-import { useState } from "react";
 import Selector from "./Selector";
 
 export default function FilterSection(props) {
-  const [inputDate, setInputDate] = useState("");
   const prices = [
-    { value: "1", label: "5K Rs. - 20K Rs." },
-    { value: "2", label: "22K Rs. - 40K Rs." },
-    { value: "3", label: "45K Rs. - 60K Rs." },
-    { value: "4", label: "61K Rs. +" },
+    { value: "1", label: "5,000 Rs. - 20,000 Rs." },
+    { value: "2", label: "22,000 Rs. - 40,000 Rs." },
+    { value: "3", label: "45,000 Rs. - 60,000 Rs." },
+    { value: "4", label: "61,000 Rs. +" },
   ];
   const property = [
     { value: "1", label: "House" },
-    { value: "2", label: "Flat" },
+    { value: "2", label: "Apartment" },
     { value: "3", label: "Bungalow" },
     { value: "4", label: "Villas" },
   ];
@@ -41,6 +39,8 @@ export default function FilterSection(props) {
             <input
               type="text"
               placeholder="Enter a location"
+              value={props.inputLocation}
+              onChange={(e) => props.setInputLocation(e.target.value)}
               className="text-primary-blue font-semibold border border-slate-200 p-1 rounded-md"
             ></input>
           </div>
@@ -50,25 +50,38 @@ export default function FilterSection(props) {
             <h3 className="text-light-blue font-semibold">When</h3>
             <div className="flex items-center justify-between">
               <h2 className="text-primary-blue font-semibold">
-                {inputDate ? inputDate : "Select Move-in Date"}
+                {props.inputDate ? props.inputDate : "Select Move-in Date"}
               </h2>
               <input
                 className="w-5"
                 type="date"
-                value={inputDate}
-                onChange={(e) => setInputDate(e.target.value)}
+                value={props.inputDate}
+                onChange={(e) => props.setInputDate(e.target.value)}
               ></input>
             </div>
           </div>
           {hr}
           {/* Choose Price  */}
-          <Selector heading="Price" default="All" options={prices} />
+          <Selector
+            heading="Price"
+            default="All"
+            options={prices}
+            input={props.inputPrice}
+            setInput={props.setInputPrice}
+          />
           {hr}
           {/* Choose Property Type  */}
-          <Selector heading="Property Type" default="All" options={property} />
+          <Selector
+            heading="Property Type"
+            default="All"
+            options={property}
+            input={props.inputType}
+            setInput={props.setInputType}
+          />
           {hr}
           <button
-            type="submit"
+            type="button"
+            onClick={props.handleForm}
             className="bg-primary-blue text-slate-100 font-semibold py-2 px-4 rounded-md"
           >
             Search

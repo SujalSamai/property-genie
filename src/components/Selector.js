@@ -11,8 +11,8 @@ export default function Selector(props) {
 
   const onItemClick = (option) => {
     setSelectedValue(option);
+    props.setInput(option.label);
     setIsOpen(!isOpen);
-    console.log(selectedValue);
   };
 
   const isSelected = (option) => {

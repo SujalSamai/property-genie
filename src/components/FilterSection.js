@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
-import Dropdown from "react-dropdown";
 import Selector from "./Selector";
 
 export default function FilterSection() {
   const [inputDate, setInputDate] = useState("");
-  const [selectPrice, setSelectPrice] = useState("");
   const prices = [
     { value: "1", label: "$500-$2,500" },
     { value: "2", label: "$800-$3,000" },
@@ -16,8 +14,11 @@ export default function FilterSection() {
     { value: "1", label: "House" },
     { value: "2", label: "Flat" },
     { value: "3", label: "Bungalow" },
-    { value: "4", label: "Apartment" },
+    { value: "4", label: "Villas" },
   ];
+  const hr = (
+    <div className="h-16 w-[2px] bg-slate-400 bg-opacity-20 rounded-md"></div>
+  );
 
   return (
     <>
@@ -30,7 +31,7 @@ export default function FilterSection() {
               placeholder="Search with Search Bar"
               className="border-2 w-full border-light-blue rounded-md py-2 pl-2 pr-4 text-sm font-semibold"
             ></input>
-            <FaChevronDown className="relative right-6 bg-light-blue rounded-full p-1" />
+            <FaChevronDown className="relative right-6 bg-light-blue bg-opacity-40 rounded-full p-1" />
           </div>
         </div>
         <form className="flex bg-white justify-between p-6 my-6 rounded-md items-center">
@@ -42,6 +43,7 @@ export default function FilterSection() {
               className="text-primary-blue font-semibold border border-slate-200 p-1 rounded-md"
             ></input>
           </div>
+          {hr}
           <div className="flex flex-col w-[20%] p-2">
             <h3 className="text-light-blue font-semibold">When</h3>
             <div className="flex items-center justify-between">
@@ -56,12 +58,15 @@ export default function FilterSection() {
               ></input>
             </div>
           </div>
+          {hr}
           <Selector heading="Price" default="$500-$2,500" options={prices} />
+          {hr}
           <Selector
             heading="Property Type"
-            default="Houses"
+            default="House"
             options={property}
           />
+          {hr}
           <button
             type="submit"
             className="bg-primary-blue text-slate-100 font-semibold py-2 px-4 rounded-md"

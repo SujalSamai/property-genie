@@ -25,13 +25,13 @@ export default function Selector(props) {
   return (
     <div className="flex flex-col w-2/12 p-2">
       <h3 className="text-light-blue font-semibold">{props.heading}</h3>
-      <div className="dropdown-container">
-        <div className="flex items-center">
+      <div className="w-full">
+        <div className="flex items-center justify-between">
           <div className="text-primary-blue font-semibold">
             {selectedValue ? selectedValue.label : props.default}
           </div>
           <FaChevronDown
-            className="mx-2 cursor-pointer"
+            className="mx-2 cursor-pointer rounded-full p-1 bg-light-blue bg-opacity-40"
             onClick={handleDropDown}
           />
         </div>

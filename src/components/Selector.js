@@ -37,7 +37,7 @@ export default function Selector(props) {
         </div>
       </div>
       <div
-        className={`bg-white p-2 text-primary-blue font-semibold absolute top-[19rem] shadow-md ${
+        className={`bg-blue-100 bg-opacity-90 backdrop-blur-md p-2 text-primary-blue font-semibold absolute top-[20rem] shadow-md rounded-md ${
           isOpen ? "block" : "hidden"
         }`}
       >

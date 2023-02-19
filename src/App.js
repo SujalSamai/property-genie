@@ -9,7 +9,12 @@ function App() {
   const [inputDate, setInputDate] = useState("");
   const [inputPrice, setInputPrice] = useState("");
   const [inputType, setInputType] = useState("");
-  const [filterArr, setFilterArr] = useState(null);
+  const [filterArr, setFilterArr] = useState({
+    location: "",
+    date: "",
+    price: "",
+    type: "",
+  });
 
   function handleForm() {
     setFilterArr({

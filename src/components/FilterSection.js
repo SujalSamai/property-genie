@@ -2,10 +2,10 @@ import Selector from "./Selector";
 
 export default function FilterSection(props) {
   const prices = [
-    { value: "1", label: "5,000 Rs. - 20,000 Rs." },
+    { value: "1", label: "10,000 Rs. - 20,000 Rs." },
     { value: "2", label: "22,000 Rs. - 40,000 Rs." },
     { value: "3", label: "45,000 Rs. - 60,000 Rs." },
-    { value: "4", label: "61,000 Rs. +" },
+    { value: "4", label: "61,000 Rs. - 99,000 Rs." },
   ];
   const property = [
     { value: "1", label: "House" },

@@ -6,22 +6,22 @@ export default function Navbar() {
       <div className="flex w-full">
         <img className="w-32" src={logo} alt="logo"></img>
         <ul className="w-6/12 font-semibold flex justify-around items-center ml-6">
-          <li className="bg-light-blue bg-opacity-60 p-2 rounded-md text-primary-blue">
+          <li className="p-2 rounded-md hover:bg-light-blue bg-opacity-20 cursor-pointer">
             <a href="#">Rent</a>
           </li>
-          <li className="p-2">
+          <li className="p-2 hover:bg-light-blue bg-opacity-20 cursor-pointer rounded-md">
             <a href="#">Buy</a>
           </li>
-          <li className="p-2">
+          <li className="p-2 hover:bg-light-blue bg-opacity-20 cursor-pointer rounded-md">
             <a href="#">Sell</a>
           </li>
-          <li className="flex items-center p-2">
+          <li className="flex items-center p-2 hover:bg-light-blue bg-opacity-20 cursor-pointer rounded-md">
             <a className="mr-2" href="#">
               Manage Property
             </a>
             <FaChevronDown />
           </li>
-          <li className="flex items-center p-2">
+          <li className="flex items-center p-2 hover:bg-light-blue bg-opacity-20 cursor-pointer rounded-md">
             <a className="mr-2" href="#">
               Resources
             </a>

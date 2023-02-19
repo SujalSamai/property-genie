@@ -3,30 +3,16 @@ import HouseCard from "./HouseCard";
 
 export default function Houses(props) {
   let search = props.searchInput.toLowerCase();
-  // let lowerPrice, upperPrice;
-  // if (props.filterArr) {
-  //   if (props.filterArr.price == "5,000Rs. - 20,000Rs.") {
-  //     lowerPrice = "5,000 Rs.";
-  //     upperPrice = "20,000 Rs.";
-  //     console.log(lowerPrice, upperPrice);
-  //   } else if (props.filterArr.price == "61,000 Rs. +") {
-  //     lowerPrice = "61,000 Rs.";
-  //     upperPrice = "100,000 Rs.";
-  //     console.log(lowerPrice, upperPrice);
-  //   } else if (props.filterArr.price == "22,000Rs. - 40,000Rs.") {
-  //     lowerPrice = "22,000 Rs.";
-  //     upperPrice = "40,000 Rs.";
-  //     console.log(lowerPrice, upperPrice);
-  //   } else if (props.filterArr.price == "45,000Rs. - 60,000Rs.") {
-  //     lowerPrice = "45,000 Rs.";
-  //     upperPrice = "60,000 Rs.";
-  //     console.log(lowerPrice, upperPrice);
-  //   }
-  // }
-
+  let lowerPrice = 0,
+    upperPrice = 0;
+  if (props.filterArr.price.length !== 0) {
+    lowerPrice = props.filterArr.price.substring(0, 2);
+    upperPrice = props.filterArr.price.substring(13, 15);
+    console.log(lowerPrice, upperPrice);
+  }
   return (
     <div className="w-9/12 m-auto flex flex-wrap">
-      {!props.filterArr
+      {props.filterArr.location.length === 0
         ? data
             .filter(
               (property) =>
@@ -59,7 +45,10 @@ export default function Houses(props) {
                   .includes(props.filterArr.location.toLowerCase()) &&
                 property.type
                   .toLowerCase()
-                  .includes(props.filterArr.type.toLowerCase())
+                  .includes(props.filterArr.type.toLowerCase()) &&
+                parseInt(property.price.substring(0, 2)) >=
+                  parseInt(lowerPrice) &&
+                parseInt(property.price.substring(0, 2)) <= parseInt(upperPrice)
             )
             .map((property) => {
               return (

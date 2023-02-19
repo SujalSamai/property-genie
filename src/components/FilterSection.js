@@ -82,7 +82,7 @@ export default function FilterSection(props) {
           <button
             type="button"
             onClick={props.handleForm}
-            className="bg-primary-blue text-slate-100 font-semibold py-2 px-4 rounded-md"
+            className="bg-primary-blue text-slate-100 font-semibold py-2 px-4 rounded-md hover:bg-light-blue hover:text-text-blue"
           >
             Search
           </button>

@@ -67,6 +67,10 @@ export default function Houses(props) {
                 />
               );
             })}
+      <div className="mt-10 mb-5 mx-auto text-center">
+        <h4 className="font-semibold ">Made by Sujal Samai 💖</h4>
+        <p className="font-semibold">with React.js & TailwindCSS</p>
+      </div>
     </div>
   );
 }
